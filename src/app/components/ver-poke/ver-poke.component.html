@@ -1,0 +1,53 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-6">
+      <div class="card text-center">
+        <div class="card-header">
+          N.° {{pokemon.numero}}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{pokemon.nombre}}</h5>
+          <img class="img-fluid" [src]="pokemon.imagen">
+          <br>
+          <a [routerLink]="['/pokemon', pokemon.id]" class="btn btn-primary">Editar</a>
+          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
+            Eliminar
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-6">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Tipo: {{pokemon.tipo}}</h5>
+          <p class="card-text">{{pokemon.descripcion}}</p>
+         </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Confirmacion</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>¿Esta seguro de Borra el Registro de {{pokemon.nombre}}?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a (click)="eliminar(pokemon.id)"  data-dismiss="modal" class="btn btn-danger">Confirmar</a>
+      </div>
+    </div>
+  </div>
+</div>

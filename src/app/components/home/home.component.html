@@ -1,0 +1,27 @@
+<img class="img-fluid" src="https://www.animespaceblog.com/wp-content/uploads/2017/07/pokemon.jpg"
+     style="height: 500px; width: 2000px">
+<br>
+
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-12" style="text-align: center">
+      <h1>POKEDEX</h1></div>
+    </div>
+  <div class="row">
+    <div class="col-3" *ngFor="let poke of pokemons">
+      <div class="card">
+        <img class="card-img-top" [src]="poke.imagen" alt="Card image cap">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">N.° {{poke.numero}}</h6>
+          <h5 class="card-title">{{poke.nombre}}</h5>
+          <a [routerLink]="['/pokemon', poke.id]" class="card-link">Editar</a>
+          <a [routerLink]="['/ver/pokemon', poke.id]" class="card-link">Mas</a>
+        </div>
+      </div><br>
+    </div>
+
+  </div>
+
+
+</div>
